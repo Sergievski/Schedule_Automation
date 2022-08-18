@@ -111,7 +111,7 @@ def solution_presentation (team:Team, schedule:Schedule) :
         print()   
         print()
             
-            
+    print("finished optimization")       
             
     return team, schedule
 
