@@ -1,2 +1,2 @@
-# schedule_authomation
-schedule_authomation
+# schedule_automation
+schedule_automation
