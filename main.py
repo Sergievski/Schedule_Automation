@@ -53,7 +53,6 @@ def main():
 
     schedule.get_extra_paid_shifts()
     
-    print("finish")
 
 
 main()
