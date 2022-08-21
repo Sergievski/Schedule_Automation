@@ -27,7 +27,7 @@ def main():
 
     #addition of possible shifts to each worker 
     for worker in team.workers:
-        worker.possible_shifts = all_possible_shifts[worker.name]
+        worker.possible_shifts = all_possible_shifts[worker.name] # nice!
 
     
     # creation of Schedule object
@@ -57,3 +57,6 @@ def main():
 
 main()
 
+# very good job stas!
+# well documennted and good job with the logic of the program
+# I had a few remarks in the code- take a look

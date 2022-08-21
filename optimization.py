@@ -55,6 +55,7 @@ def covering_problematic_shifts(barely_covered_shifts,team:Team,schedule:Schedul
                 worker.schedule.append(schedule.shifts[i].name)
                 worker.shifts_num -= 1
 
+    # why do you need special treatment for the last shift?
     # covering the last (20) shift :
     order = [3,0,2,1] 
     for i in order :

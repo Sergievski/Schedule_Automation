@@ -30,6 +30,7 @@ class Team:
 class Shift :
 
     def __init__(self, name):
+        # instead of name - 2 parameters: day, time
         self.name = name
         self.worker = None
     
@@ -46,6 +47,7 @@ class Schedule :
         for day in days:
             for time_of_day in day_times:
                 shift_names.append(day+"_"+time_of_day)
+                # shift_name - why not add time_of_day to shift object?
         for i in shift_names :
             shift = Shift (i)
             self.shifts.append(shift)
