@@ -1,14 +1,4 @@
-class Results :
-    
-    def __init__(self) :
-        self.data = []
-        
-    def add (self, schedule):
-        self.data.append(schedule)
-        
-        
 class Employee :
-
     def __init__(self, name, shifts_num):
         self.name = name
         self.shifts_num = shifts_num
@@ -20,7 +10,6 @@ class Employee :
     
     
 class Team:
-
     def __init__(self) :
         self.workers = []
 
@@ -31,11 +20,9 @@ class Team:
         for worker in self.workers:
             if worker.name == name:
                 print(worker.name, worker.schedule)
-                
+             
                    
-
 class Shift :
-
     def __init__(self, name):
         # instead of name - 2 parameters: day, time
         self.name = name
@@ -46,7 +33,6 @@ class Shift :
 
     
 class Schedule :
-
     def __init__(self,days,day_times) :
         self.points = 0
         shift_names = []
@@ -58,14 +44,10 @@ class Schedule :
         for i in shift_names :
             shift = Shift (i)
             self.shifts.append(shift)
-
     
     def print (self):
-        
         for shift in self.shifts:
             print (shift.name,"", shift.worker)
-
-
 
     def get_extra_paid_shifts (self):
         print("Extra paid shifts :")
