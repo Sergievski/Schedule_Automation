@@ -1,5 +1,6 @@
 Welcome to my Schedule Automation and Optimization project! 
-This program allows you to input a CSV file containing the scheduling preferences of 4 workers,
+This program allows you to input a CSV file containing the scheduling preferences ("YES","NO","PREFER") of 4 workers,
+for 21 shifts (7 days , 3 shifts every day- Morning, Afternoon, Night) 
 and generates a full week schedule based on those preferences.
 Simply input your preferences in the specified format,
 and the program will handle the rest. 
