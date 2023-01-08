@@ -1,7 +1,4 @@
-
 from data import Schedule, Team, Results
-
-
 
 
 def test_if_all_shifts_are_covered (team : Team, schedule:Schedule) : #checking that all the shifts are covered (by one worker at least) . 
@@ -48,7 +45,6 @@ def search_for_problematic_shifts(team):  # searching for "problematic" shifts (
 
 
 def covering_problematic_shifts(barely_covered_shifts,team:Team,schedule:Schedule):  # covering of "problematic" shifts
-
     # covering problematic shifts
     for i in barely_covered_shifts :
         for worker in team.workers :
@@ -57,7 +53,7 @@ def covering_problematic_shifts(barely_covered_shifts,team:Team,schedule:Schedul
                 worker.schedule.append(schedule.shifts[i].name)
                 worker.shifts_num -= 1
 
-    # covering the last (20) shift :
+    # covering the last (20) shift : necessary to prevent "double" shift . 
     order = [3,0,2,1] 
     for i in order :
         if team.workers[i].possible_shifts[20] != "NO":
@@ -71,14 +67,14 @@ def covering_problematic_shifts(barely_covered_shifts,team:Team,schedule:Schedul
 
 def main_algorithm (team, schedule, perm_1, perm_2) : # algorithm that runs on every shift "i" and maches it a worker  
     
-    
-    for i in range (20):  # except the last shift, that already covered (nessesery condition to not put worker in "neightboors" shifts)
+   
+    for i in range (20):  # except the last shift, that already covered 
         for j in perm_1 :
             if team.workers[j].possible_shifts[i] == "PREFER" and team.workers[j].shifts_num > 0 and schedule.shifts[i-1].worker != team.workers[j].name and schedule.shifts[i].worker == None and schedule.shifts[i+1].worker != team.workers[j].name :
                 schedule.shifts[i].worker = team.workers[j].name
                 team.workers[j].shifts_num -= 1
                 team.workers[j].schedule.append(schedule.shifts[i].name)
-                schedule.points += 4 ## bonus counting for comparizon between feasible solutions
+                schedule.points += 4 ## counting for comparizon between feasible solutions - "PREFER' gets more points then "YES" . 
                 break
             
         for k in perm_2 :
@@ -86,19 +82,13 @@ def main_algorithm (team, schedule, perm_1, perm_2) : # algorithm that runs on e
                 schedule.shifts[i].worker = team.workers[k].name
                 team.workers[k].shifts_num -= 1
                 team.workers[k].schedule.append(schedule.shifts[i].name)
-                schedule.points += 1 ## bonus counting for comparizon between feasible solutions
+                schedule.points += 1 ## counting for later comparizon between feasible solutions
                 break
      
-    
     return team , schedule
 
     
-
-    
 def solution_presentation (team:Team, schedule:Schedule) :
-    
-
-    
     my_count = 0
     for shift in schedule.shifts:
         if shift.worker == None:
@@ -107,8 +97,7 @@ def solution_presentation (team:Team, schedule:Schedule) :
         else :
             my_count += 1
             
-    if my_count == 21 : # that means that we got a proper schedule    
-             
+    if my_count == 21 : # that means that we got a proper schedule       
         print("Personal shedules :")
         print()
         for worker in team.workers :
@@ -122,10 +111,6 @@ def solution_presentation (team:Team, schedule:Schedule) :
         print("schedule_points = ",schedule.points)  
         print()
         print("------------------------------------------------------------------------------------") 
-    
-    
-    
-        
         
     return team, schedule
 
