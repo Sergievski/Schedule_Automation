@@ -3,7 +3,7 @@ from main_builder import main_schedule_builder
 from itertools import permutations 
 
 ### The main_schedule_builder creates only one schedule , and if the result is feasible , prints only one result (probably not the best),
-### therefore , here i use permutations to get big amount of feasible solutions and sort they by their value -  "points" . 
+### therefore , i used permutations to get more feasible solutions and sort they by their value -  "points" . 
 
 def main ():
     
