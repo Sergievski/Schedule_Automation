@@ -1,5 +1,12 @@
-
-
+class Results :
+    
+    def __init__(self) :
+        self.data = []
+        
+    def add (self, schedule):
+        self.data.append(schedule)
+        
+        
 class Employee :
 
     def __init__(self, name, shifts_num):
@@ -41,7 +48,7 @@ class Shift :
 class Schedule :
 
     def __init__(self,days,day_times) :
-    
+        self.points = 0
         shift_names = []
         self.shifts = []
         for day in days:
@@ -68,4 +75,3 @@ class Schedule :
             
     
             
-
