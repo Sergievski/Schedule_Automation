@@ -12,7 +12,7 @@ taking into account the constraint that workers cannot work two shifts in a row.
 If a feasible schedule can be generated, it is displayed.
 If not, the program will output a message indicating that there is no feasible solution and to try covering more shift options.
 
-To optimaized the solution , i used permutations of indexes , on which the main algorithm is running , 
+To optimaize the solution , i used permutations of indexes , on which the main algorithm is running , 
 to get 24*24 = 576 diffrent schedules/solution , and after feasibility check , every feasible schedule printed with it's "points" 
 measurment. The highest point schedule is -the higher amount of preferable shifts assigned. 
 
